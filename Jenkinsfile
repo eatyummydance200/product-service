@@ -65,7 +65,6 @@ pipeline {
       }
       steps {
         withCredentials([
-          file(credentialsId: 'kubeconfig-docker-desktop', variable: 'KUBECONFIG'),
           usernamePassword(credentialsId: 'gitops-repo-cred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')
         ]) {
           sh '''
